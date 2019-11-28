@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人中心</title>
+    <link href="/static/css/one.css" rel="stylesheet" type="text/css">
+    <script src="/static/JavaScript/jquery-min.js"></script>
+</head>
+<body>
+    <div class="head">
+        <div class="left">
+            <ul>
+                <li> <a href="">山寨music</a></li>
+                <li><a href="/index">首页</a></li>
+                <li><a href="">我的music</a></li>
+                <li><a href="">浏览发现</a></li>
+                <li><a href="">话题广场</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <form action="" method="POST">
+            <input type="text" placeholder="请输入要搜索的内容:"">
+            <button class="btn"></button>
+            </form>
+        </div>
+    </div>
+    <div class="body">
+        <div class="body-left">
+            <div class="first">
+                <div class="bottom">
+                </div>
+                <span> <h2 id="username"></h2></span>
+                <span id="span"><a href="" class="first_a" id='btn_add' style="display:inline">(添加个人签名)</a></span>
+                <div style="display:none" id='table1'>
+                    <input type="text" name="info" id="text">
+                    <input type="submit" name="" id="submit" value="确定">
+                    <button>取消</button>
+                </div>
+            </div>
+        <script>
+            function fun01(){
+                $.ajax({
+                url:'/personal/info',
+                type:'get',
+                dataType:'json',
+                success:function(result){
+                    if (result.code==200){
+                        if (result.data.info){
+                            $('#table1').attr('style','display:none')
+                            $('#table1').html(result.data.info)
+                        }else{
+                            $('#username').html('please login')
+                        }
+                        
+                    }
+                }
+            })
+            }
+            fun01()
+
+            $(function(){
+                    $('#btn_add').mouseover(function(){
+                    $('#btn_add').attr('style','display:none');
+                    $('#table1').attr('style','display:inline');
+                    
+        
+                })
+                $('#submit').click(function(){
+                    $.ajax({
+                    url:'http://127.0.0.1:8000/personal/',
+                    type:'post',
+                    data:{'data':$('#text').val()},
+                    dataType:'json',
+                    //是否用异步
+                    async:true,
+                    success:function(data){
+                        
+                        $('#table1').attr('style','display:none')
+                        fun01()
+                    },
+                })
+            })
+            })
+            $.ajax({
+                url:'http://127.0.0.1:8000/personal/username',
+                type:'get',
+                dataType:'json',
+                success:function(result){
+                    if (result.code==200){
+                        if (result.data.username){
+                            $('#username').html(result.data.username)
+                        }else{
+                            $('#username').html('please login')
+                        }
+                        
+                    }
+                }
+            })
+        </script>
+            <div class="second">
+                <ul>
+                    <li><a href="">我的主页</a></li>
+                    <li><a href="">广播</a></li>
+                    <li><a href="">相册</a></li>
+                    <li><a href="">日记</a></li>
+                    <li><a href="">设置</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="all_note">我的日记...
+                    <a href="/personal/diary" class="add_diary">+写日记</a>
+                </div>
+                <div id="diary_content">
+
+                </div>
+            </div>
+            <div class="all_photo">我的照片...
+                <a href="/personal/photo" class="add_diary">+上传照片</a>
+            </div>
+            <div id="photo">
+
+
+            </div>
+
+        </div>
+        <script>
+            //console.log('123'),
+            $.ajax({
+                    url:'http://127.0.0.1:8000/personal/handle_index',
+                    type:'post',
+                    //data:{'user_id':10},
+                    dataType:'json',
+                    //是否用异步
+                    async:true,
+                    success:function(data){
+                        if (data.code==200){
+                            var content_list = data.diary;
+                            var photo_list =data.photo;
+                            //console.log(photo_list[0].avator)
+                            console.log('99')
+                            var html='';
+                            //<div class="diary_head"><p>时间</p></div>
+                            //<div class="diary_content"><p>内容</p></div>
+                            console.log(html);
+                            for (var content1 in content_list){
+                                //console.log(content_list[content1].created_time)
+                                html +='<div class="diary_head"><p>'+content_list[content1].created_time+'</p></div>'
+                                html +='<div class="diary_content"><p>'+content_list[content1].content+'</p></div>'
+                            }
+                            $('#diary_content').html(html)
+                            html='';
+                            for (var photo in photo_list){
+                               // console.log(photo_list[photo].avator)
+                                scr = 'http://127.0.0.1:8000/media/'+photo_list[photo].avator
+                                //console.log(scr)
+                                html+='<img src="'+scr+'" class="photo" alt="">'
+                                console.log(html)
+                            }
+                            $('#photo').html(html)
+                        }
+                        else{
+                            alert(data.info)
+                        }
+                    },
+                    })
+
+        </script>
+        <div class="body-right">
+            <div class="head1">
+                <div>
+                    最近听的歌...
+                </div>
+                <ul>
+                    <li> <a href="">歌曲一</a> </li>
+                </ul>
+            </div>
+            <div class="tail">
+                <div>
+                    我喜欢的歌...
+                </div>
+                <ul>
+                    <li> <a href="">歌曲一</a> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

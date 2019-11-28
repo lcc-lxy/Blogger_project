@@ -1,0 +1,10 @@
+{% extends 'musician/base.html' %}
+    {% block bt %}民谣{% endblock bt %}
+    {% block my %}民谣{% endblock %}
+        {% block body %}
+        {% for i in page %}
+            {% if i.style == 4 %}
+                {% include 'musician/tag.html' %}
+            {% endif %}
+        {% endfor %}
+        {% endblock body %}

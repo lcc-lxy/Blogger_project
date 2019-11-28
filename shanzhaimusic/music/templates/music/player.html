@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/static/JavaScript/jquery.min.js"></script>
+    <script src="/static/JavaScript/layer.js"></script>
+    <script src="/static/JavaScript/player.js"></script>
+    <link rel="stylesheet" href="/static/css/player.css">
+    <title>正在播放</title>
+    <style>
+        #all_discuss{
+            margin-left: 20%;
+        }
+        #all_discuss li{
+            margin-top:12px;
+            
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <div>
+        <div id="login_box"></div>
+        <div id="d1">
+            <div id="box">
+
+                <div id="mlist">
+                        <ul>
+                            <li class="play">缘分一道桥</li>
+                            <li>世间美好与你环环相扣</li>
+                            <li>老街</li>
+                            <li>飞云之下</li>
+                            <li>正在播放: {{ music.music_name }}</li>
+                        </ul>
+                    </div>
+
+                    <div id="picture">
+                            <img src="/static/picture/2019-11-06 08-54-40屏幕截图.png" alt="">
+                    </div>
+            </div>
+
+            <div id="audio_btn">
+
+                    <a href="/music/player/up/{{ music.id }}" id="btnpre"> 上一首</a>
+                    <audio controls="controls" src="/media/{{ music.music_dir }}" autoplay="true"
+                           loop="loop"
+                           id="aud"></audio>
+                    <a href="/music/player/down/{{ music.id }}"  id="btnnext">下一曲</a>
+                </div>
+            
+
+        </div>
+        <div id="all_discuss">
+            <div id="discuss_count"></div>
+            <div id="discuss"></div>
+            <div id="huifu"></div>
+
+        </div>
+        <div>
+
+            <!-- <form action="/music/player/{{ music.id }}" method="POST"> -->
+
+            <textarea name="message" id="ta1" cols="130" rows="10"></textarea><br>
+            
+            <button id="submit" onclick="fun03()" >发表</button>
+            <a href="/index">返回首页</a>
+            <!-- </form> -->
+        </div>
+        
+    </div>
+    
+    
+    <script>
+        
+        $.ajax({
+            url:'http://127.0.0.1:8000/index/index_server',
+            type:'get',
+            dataType:'json',
+            success:function(data){
+                if (data.username){
+                    $('#login_box').html('<span class="dl">欢迎您 , '+data.username +' <a href="/personal">个人中心</a>   <a href="/index/exit/">注销</a></span>')
+                }else{
+                    $('#login_box').html('<span class="dl"><a href="/user/login">登录/注册</a></span>')
+                }
+            }
+        })
+        var url = document.location.toString()
+        var arrurl = url.split('//')
+        var music_id = arrurl[1].split('/')[3]
+        var music_url = 'http://127.0.0.1:8000/music/discuss?music_id=' + music_id
+        function fun01(){
+            var huifu2 = document.getElementsByClassName('2huifu')
+            console.log(huifu2)
+                for (var i=0;i<huifu2.length;i++){
+                    
+                    huifu2[i].setAttribute('style','display:none')
+                }
+        }
+        function fun02(discuss_id){
+            layer.prompt({title: '回复', formType: 2}, function(text, index){
+                // layer.msg('您最后写下了：'+text);
+                console.log(text,index)
+                $.ajax({
+                    url:music_url+'&discuss_id='+discuss_id,
+                    type:'post',
+                    data:{
+                        
+                        'discuss':text,
+                    },
+                    dataType:'json',
+                    success:function(result){
+                        if (result.code == 200){
+                            alert('发表成功')
+                            location.reload()
+                        }else{
+                            alert('发表失败')
+                            location.reload()
+                        }
+                    }
+                })
+                layer.close(index)
+            });
+        }
+        function fun03(){
+            var message = document.getElementById("ta1").value
+            $('#ta1').html('')
+            $.ajax({
+                url:music_url,
+                type:'post',
+                data:{
+                    'message':message
+                },
+                dataType:'json',
+                success:function(result){
+                    if (result.code==200){
+                        alert('发表成功')
+
+                        window.location.reload()
+
+                    }
+                }
+            })
+        }
+        $.ajax({
+            url:music_url,
+            type:'get',
+            dataType:'json',
+            success:function(result){
+                
+                if (result.code == 200){
+                    
+                    var html_body = ''
+                    html_body += '<div class="news_pl">'
+                    html_body += '<h2>歌曲评论</h2>'
+                    html_body += '<ul>'
+                    html_body += '<div class="gbko">'
+                    html_body += '<div class="l_box f_l" >'
+                    html_body += '<div class="commentstitle">'
+                    html_body += '<h3 id="comments">到现在<span class="commentsnumber">有' + result.discuss_count + '条评论</span></h3>'
+                    
+                    $('#discuss_count').html(html_body)
+
+                    var html_body = ''
+                    var discuss_list = result.data
+                    
+                    html_body += '<ul class="commentlist" style="list-style-type:none;">';
+                    for(var discuss in discuss_list){
+                        
+                        html_body += '<li>';
+                        html_body += '<div class="top"><a href="#"  class="url">' + discuss_list[discuss].username  + '</a>';
+                        html_body += '<span class="time"> @';
+                        html_body += '<a href="#" title="">' + discuss_list[discuss].created_time  + '</a>'+'@';
+                        html_body += '<a href="javascript:;" class="replyComment" onclick=fun02('+discuss_list[discuss].id+') mid=' + discuss_list[discuss].id + '>回复</a>';
+                        // html_body += '<span class="2huifu"><input type="text" id="huifu" name="huifu"><input type="submit" value="发表"></span>';
+                        html_body += '</span>';
+                        html_body += '</div>';
+                        html_body += '<div class="body">';
+                        html_body += discuss_list[discuss].discuss;
+                        html_body += '</div>';
+                        html_body += '</li>';
+                       
+                        var reply_list = discuss_list[discuss].reply
+                        console.log(reply_list)
+                        for(var rm in reply_list){
+                            console.log(reply_list[rm])
+                            html_body += '<li>';
+                            html_body += '<div class="reply" style="marign-left:16px;padding-left:24px;">';
+                            html_body += '<div class="top">';
+                            html_body += '<a href="#" class="url">' + reply_list[rm].username + '</a>';
+                            html_body += '<span class="time">';
+                            html_body += '@ <a href="#" title="">' + reply_list[rm].created_time + '</a>';
+                            html_body += '</span>';
+                            html_body += '</div>';
+                        
+                            html_body += '<div class="body">' + reply_list[rm].discuss  + '</div>';
+                            html_body += '</div>';
+                            html_body += '</li>';
+
+                        }
+                        // html_body += '</ul>';
+                        $('#discuss').html(html_body)
+                   
+                    }
+                    
+                            
+                       
+                    
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

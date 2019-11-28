@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        
+        background-image:url(picture/cartoon-002.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    #box{
+        margin: 0 auto;
+        width: 1000px;
+        height: 300px;
+        background-color:aqua; 
+        margin-top: 150px;
+    }
+    #mlist{
+        float: left;
+        width: 500px;
+        height: 250px;
+    }
+    #mlist ul{
+        text-align: center;
+        list-style-type: none;   
+    }
+    #mlist ul li{
+        margin-top: 15px;
+        padding: 10px auto;
+        border-bottom:solid 1px black;
+    }
+    #picture{
+        float:right;
+    }
+    #audio_btn{
+    position: relative;
+    width: 1000px;
+    height: 60px;
+    background-color: aquamarine;
+    margin: 0 auto;
+    padding: 3px;
+    text-align: center;
+    
+    
+}
+#aud{
+    line-height: 60px;
+    display:inline-block;
+    
+}
+#btnpre{
+    position: absolute;
+    display: inline-block;
+    margin-top: 20px;
+    height: 30px;
+    margin-left: -100px;
+    text-decoration:none;
+}
+#btnnext{
+    position: absolute;
+    display: inline-block;
+    margin-top: 20px;
+    height: 30px;
+    margin-left: 100px;
+    text-decoration:none;
+    
+}
+    </style>
+</head>
+<body>
+        <div id="box">
+            
+                <div id="mlist">
+                        <ul>
+                            <li class="play">Rain.mp3</li>
+                            <li>世间美好与你环环相扣</li>
+                            <li>天堂和地域之间</li>
+                            <li>樱花</li>
+                        </ul>
+                    </div>
+        
+                    <div id="picture">
+                            <img src="./picture/2019-11-06 08-54-40屏幕截图.png" alt="">
+                    </div>
+            </div>
+        
+            <div id="audio_btn">
+                    <a href="javascript:" id="btnpre"> 上一首</a>
+                    <audio controls="controls" src="{{ music.music_dir }}" autoplay="true" loop="loop" id="aud"></audio>
+                    <a href="javascript:"  id="btnnext">下一曲</a>
+                </div>  
+    
+<script src="./js/jquery-1.11.3.js"></script>
+<script>
+    var btnnext = document.getElementById('btnnext')
+    var music
+    musiclist = new Array(
+        'Rain.mp3',
+        '世间美好与你环环相扣.mp3',
+        '天堂和地狱之间.mp3',
+        '樱花.mp3'
+    )
+    var musicindex = 0
+    $('#btnnext').click(function(){
+        musicindex++;
+        console.log(musicindex)
+        if(musicindex>=musiclist.length){
+            musicindex = 0
+        }
+        getmusic()
+        aud.play()
+  })
+
+    $('#btnpre').click(function(){
+        musicindex--;
+        
+        if(musicindex < 0 ){
+            musicindex = musiclist.length-1
+        }
+        console.log(musicindex);
+        getmusic()
+        aud.play()
+    })
+
+
+
+  function getmusic(){
+      aud.src = 'music/'+musiclist[musicindex]
+  }
+
+
+</script>
+</body>
+</html>

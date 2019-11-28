@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block bt %}音乐人{% endblock bt %}</title>
+    <style>
+        body {
+            background-image: url('/static/images/timg.jpeg');
+            height: 100%;
+            background-size: cover;
+            width: 450px;
+            margin: auto
+        }
+
+        h1 {
+            text-align: center;
+            color: purple;
+        }
+
+        #main {
+            width: 500px;
+            height: 600px;
+            text-align: center;
+        }
+
+        #abc {
+            width: 150px;
+            height: 200px;
+            float: left;
+            vertical-align: middle
+        }
+
+        #musician {
+            text-align: center;
+        }
+
+        #fenlei {
+            margin: 15px 0;
+            margin-right: 180px
+        }
+
+        #page {
+            margin: 0 100px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .box {
+            margin: 10px auto;
+            color: #ff4b37;
+            text-align: center;
+            font-size: 20px;
+            display: inline-block;
+        }
+
+
+        img {
+            max-height: 120px;
+            max-width: 120px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>山寨音乐人</h1>
+    <div id="main">
+        <div id="fenlei">
+            {% block gl %}<a href="/musician/musician"> 概览</a>/{% endblock gl %}
+            {% block lx %}<a href="/musician/musician_lx">流行</a>/{% endblock lx %}
+            {% block yg %}<a href="/musician/musician_yg">摇滚</a>/{% endblock yg %}
+            {% block dz %}<a href="/musician/musician_dz">电子</a>/{% endblock dz %}
+            {% block my %}<a href="/musician/musician_my">民谣</a>/{% endblock my %}
+            {% block js %}<a href="/musician/musician_js">爵士</a> {% endblock js %}
+        </div>
+
+        <div>
+            {% block body %}
+            {% for i in page %}
+            <div id="abc">
+                <div>
+                    <a href="/music/search?man={{ i.musician }}" class="pic">
+                        <img id="img" src='/{{ i.picture }}' alt="图片找不到!">
+                    </a>
+                </div>
+
+                <div id="musician">
+                    <a href="/music/search?man={{ i.musician }}">{{ i.musician }}</a> <br>
+                    <p>({{ i.like }}人喜欢)</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% endblock body %}
+        </div>
+    </div>
+    {% block page %}
+    <div id="page">
+        {% if page.has_previous %}
+        <a href="/music/{{ filename }}?page={{ page.previous_page_number }}"> 上一页 </a>
+        {% else %}
+        上一页
+        {% endif %}
+
+        {% for p in paginator.page_range %}
+        {% if p == page.number %}
+        <div class="box">{{ p }}</div>
+        {% else %}
+        <div class="box"><a href="/music/{{ filename }}?page={{ p }}"> {{ p }} </a></div>
+        {% endif %}
+        {% endfor %}
+
+        {% if page.has_next %}
+        <a href="/music/{{ filename }}?page={{ page.next_page_number }}"> 下一页 </a>
+        {% else %}
+        下一页
+        {% endif %}
+        <h4><a href="/index">返回首页</a></h4>
+    </div>
+    {% endblock page %}
+</div>
+</body>
+</html>

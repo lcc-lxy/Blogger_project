@@ -1,0 +1,10 @@
+{% extends 'musician/base.html' %}
+    {% block bt %}爵士{% endblock bt %}
+    {% block js %}爵士{% endblock %}
+        {% block body %}
+        {% for i in page %}
+            {% if i.style == 5 %}
+                {% include 'musician/tag.html' %}
+            {% endif %}
+        {% endfor %}
+        {% endblock body %}

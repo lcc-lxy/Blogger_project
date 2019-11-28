@@ -1,0 +1,12 @@
+{% extends 'musician/base.html' %}
+    {% block bt %}流行{% endblock bt %}
+    {% block lx %}流行{% endblock lx %}
+        {% block body %}
+        {% for i in page %}
+            {% if i.style == 1 %}
+                {% include 'musician/tag.html' %}
+            {% endif %}
+        {% endfor %}
+        {% endblock body %}
+
+

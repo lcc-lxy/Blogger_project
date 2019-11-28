@@ -1,0 +1,76 @@
+body{
+
+        /* background-image:url(/static/picture/cartoon-002.jpg); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    #box{
+        margin: 0 auto;
+        width: 1000px;
+        height: 300px;
+        background-color:aqua;
+        margin-top: 50px;
+    }
+    #mlist{
+        float: left;
+        width: 500px;
+        height: 250px;
+    }
+    #mlist ul{
+        text-align: center;
+        list-style-type: none;
+    }
+    #mlist ul li{
+        margin-top: 15px;
+        padding: 10px auto;
+        border-bottom:solid 1px black;
+    }
+    #picture{
+        float:right;
+    }
+    #audio_btn{
+    position: relative;
+    width: 1000px;
+    height: 60px;
+    background-color: aquamarine;
+    margin: 0 auto;
+    padding: 3px;
+    text-align: center;
+
+
+}
+#aud{
+    line-height: 60px;
+    display:inline-block;
+
+}
+#btnpre{
+    position: absolute;
+    display: inline-block;
+    margin-top: 20px;
+    height: 30px;
+    margin-left: -100px;
+    text-decoration:none;
+}
+#btnnext{
+    position: absolute;
+    display: inline-block;
+    margin-top: 20px;
+    height: 30px;
+    margin-left: 100px;
+    text-decoration:none;
+
+}
+#login_box{
+    width: 100%;
+    height: 40px;
+    background-color: #666;
+    color:white;
+    position: relative;
+}
+#login_box .dl{
+    position: absolute;
+    right: 110px;
+    top: 10px;
+}

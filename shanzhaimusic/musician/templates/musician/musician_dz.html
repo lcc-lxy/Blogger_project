@@ -1,0 +1,10 @@
+{% extends 'musician/base.html' %}
+    {% block bt %}电子{% endblock bt %}
+    {% block dz %}电子{% endblock dz %}
+        {% block body %}
+        {% for i in page %}
+            {% if i.style == 3 %}
+                {% include 'musician/tag.html' %}
+            {% endif %}
+        {% endfor %}
+        {% endblock body %}

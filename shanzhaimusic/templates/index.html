@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>山寨音乐</title>
+    <script type="text/javascript" src="/static/JavaScript/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/static/JavaScript/superslide.2.1.js"></script>
+    <link rel="stylesheet" href="../static/css/index.css" type="text/css">
+</head>
+
+<body>
+    <!-- 最外层 -->
+    <div class="layer">
+        <!-- 头部 -->
+        <div class="top">
+            <!-- 登录注册 -->
+            <div class="brief" id="login_box">
+                
+                
+                <!-- ！brief -->
+            </div>
+            <!-- logo -->
+            <div class="tmin">
+                <div class="logo">
+                    <h1><a href="">山寨音乐</a></h1>
+                    <!-- !logo -->
+                </div>
+                <!-- 搜索框 -->
+                <div class="box">
+                    <!-- 搜索栏 -->
+                    <div class="bar-inp">
+                        <form action="/music/search/" method="POST">
+                            {% csrf_token %}
+                        <input type="text" id='inp' name="search" maxlength="60" placeholder="音乐人、唱片名" value
+                            autocomplete='off'>
+                        </form>
+                        <!-- !bar -->
+                    </div>
+                    <div class="inp-btn">
+                            <input type="submit" value="">
+                        </div>
+                    <!-- ！box -->
+                </div>
+            </div>
+            <hr>
+            <!-- 导航 -->
+            <div class="nav">
+                <div class="test">
+                    <a href="/musician"> <span>音乐人</span> </a>
+                    <a href=""> <span>排行榜</span> </a>
+                    <a href=""> <span>乐评</span> </a>
+                    <a href=""> <span>分类浏览</span> </a>
+
+                </div>
+                <!-- !nav -->
+            </div>
+            <!-- !top -->
+        </div>
+        <!-- 滚动 -->
+        <div class="slider">
+            <div class="bd">
+                <ul>
+                    <li> <a href="message?page=1"> <img src="/static/img/b1.png" alt=""></a></li>
+                    <li> <a href="message?page=2"> <img src="/static/img/b2.png" alt=""></a></li>
+                    <li> <a href="message?page=3"> <img src="/static/img/b3.png" alt=""></a></li>
+                    <li> <a href="message?page=4"> <img src="/static/img/b4.png" alt=""></a></li>
+                </ul>
+                <!-- !rolling -->
+            </div>
+            <div class="hd">
+                <ul>
+
+                </ul>
+            </div>
+
+            <div class="pnBtn prev"><span class="blackBg"></span><a class="arrow" href="javascript:void(0)"></a></div>
+            <div class="pnBtn next"><span class="blackBg"></span><a class="arrow" href="javascript:void(0)"></a></div>
+        </div>
+
+        <!-- 中间 -->
+        <div class="mid">
+            <!-- 左 -->
+            <div class="left">
+
+                <div class="popu">
+                    <ul class="header">
+                        <li class="bar ff">本周音乐人</li>
+                        |
+                        <li class="bar">上升最快音乐人</li>
+                    </ul>
+                    <ul class="con">
+                        <div class="artists">
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/1" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/lu.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <a href="/music/player/1" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/2" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/lu.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/2" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/3" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/lu.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/3" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/4" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/lu.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/4" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/5" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/lu.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/5" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/6" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/lu.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/6" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/7" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/lu.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/7" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/8" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/lu.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/8" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                        </div>
+                    </ul>
+                    <ul class="con">
+                        <div class="artists">
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/9" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/ren.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <a href="/music/player/9" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/10" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/ren.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/10" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/1" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/ren.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/1" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/2" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/ren.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/2" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/3" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/ren.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/3" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/4" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/ren.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/4" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/5" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/ren.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/5" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                            <div class="upper">
+                                <div class="cover">
+                                    <a href="/music/player/6" class="artists-photo">
+                                        <div class="photo-img">
+                                            <img src="/static/img/ren.png" alt="">
+                                        </div>
+                                        <div class="bg">
+                                            <div class="hover">
+                                                <p>Shanghai</p>
+                                                <p>海棠</p>
+                                                <p>"intro"</p>
+                                                <p>嵐</p>
+                                            </div>
+                                            <span class="round-btn">
+                                                <i class="icon-round-btn"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="/music/player/6" class="title">
+                                    花镜泉
+                                </a>
+                                <p class="genre">世界音乐 World</p>
+                            </div>
+                        </div cla>
+                    </ul>
+                </div>
+                <div class="section">
+                    <div class="header">
+                        <span class="title">新碟榜</span>
+                        <ul class="section-titles">
+                            <li class="tar fff">最热</li>
+                            <li class="tar">华语</li>
+                            <li class="tar">欧美</li>
+                            <li class="tar">日韩</li>
+                            <li class="tar">单曲</li>
+                        </ul>
+                    </div>
+                    <ul class="don">
+                        <div class="content">
+                            <div class="album-content">
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/2">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/2" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/3">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/4" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/5">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/5" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/6">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/6" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/7">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/7" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/8">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/8" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/9">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/9" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <ul class="don">
+                        <div class="content">
+                            <div class="album-content">
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/10">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/10" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <ul class="don">
+                        <div class="content">
+                            <div class="album-content">
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <ul class="don">
+                        <div class="content">
+                            <div class="album-content">
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/lu.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <ul class="don">
+                        <div class="content">
+                            <div class="album-content">
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                                <div class="album-item">
+                                    <div class="inner">
+                                        <a href="/music/player/1">
+                                            <div class="cover">
+                                                <img src="/static/img/ren.png" alt="">
+                                            </div>
+                                        </a>
+                                        <a href="/music/player/1" class="album-title">Magdalene</a>
+                                        <p>FKA twigs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div class="join">
+                    <div class="join-block">
+                        <h2>
+                            <a href="" class="primary">
+                                46679
+                            </a>
+                        </h2>
+                        <p>音乐人</p>
+                        <a href="" class="button">我要加入</a>
+                    </div>
+                </div>
+                <div class="tag">
+                    <div class="tag-header">
+                        热门音乐人分类
+                    </div>
+                    <div class="tag-more">
+                        <a href="/musician">更多</a>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th><a href="/musician/musician_lx">流行</a></th>
+                                <td><a href="/musician">轻音乐</a></td>
+                            </tr>
+                            <tr>
+                                <th><a href="/musician/musician_lx">摇滚</a></th>
+                                <td><a href="/musician">古典</a></td>
+                            </tr>
+                            <tr>
+                                <th><a href="/musician/musician_dz">电子</a></th>
+                                <td><a href="/musician">世界音乐</a></td>
+                            </tr>
+                            <tr>
+                                <th><a href="/musician/musician_my">民谣</a></th>
+                                <td><a href="/musician">说唱</a></td>
+                            </tr>
+                            <tr>
+                                <th><a href="/musician/musician_js">爵士</a></th>
+                                <td><a href="/musician">原生</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="hot">
+                    <div class="header">
+                        <span>本周单曲榜</span>
+                    </div>
+                    <div class="contents">
+                        <ul class="titles">
+                            <li class="far ffff">最热|</li>
+                            <li class="far">摇滚|</li>
+                            <li class="far">民谣|</li>
+                            <li class="far">流行|</li>
+                            <li class="far">电子|</li>
+                            <li class="far">说唱</li>
+                        </ul>
+                        <div class="hot-song">
+                            <ul class="hot-song-ul">
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">1</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">2
+
+
+                                    </span>
+                                </li>
+                            
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">3</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">4</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">5</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">6</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">7</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">8</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">9</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">10</span>
+                                </li>
+                            </ul>
+
+                            <ul class="hot-song-ul">
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">1</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">2
+
+
+                                    </span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">3</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">4</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">5</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">6</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">7</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">8</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">9</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">10</span>
+                                </li>
+                            </ul>
+
+                            <ul class="hot-song-ul">
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">1</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">2
+
+
+                                    </span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">3</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">4</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">5</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">6</span>
+                                </li>
+                           
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">7</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">8</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">9</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">10</span>
+                                </li>
+                            </ul>
+
+                            <ul class="hot-song-ul">
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">1</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">2
+
+
+                                    </span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">3</span>
+                                </li>
+                           
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">4</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">5</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">6</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">7</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">8</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">9</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">10</span>
+                                </li>
+                            </ul>
+
+                            <ul class="hot-song-ul">
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">1</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">2
+
+
+                                    </span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">3</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">4</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">5</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">6</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">7</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">8</span>
+                                </li>
+                            
+                                <li class="song">
+                                <div class="avatar">
+                                    <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                    <span class="icon">
+                                        <i class="icon-play"></i>
+                                    </span>
+
+                                </div>
+                                <h3>写在远方 邱不苑作词</h3>
+                                <p>
+                                    <span>小天Xiaotian</span>
+                                </p>
+                                <span class="rank">9</span>
+                                </li>
+                           
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/f01e49d8b8de5aa.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">10</span>
+                                </li>
+                            </ul>
+
+                            <ul class="hot-song-ul">
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">1</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">2
+
+
+                                    </span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">3</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">4</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">5</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">6</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">7</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">8</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">9</span>
+                                </li>
+                            
+                                <li class="song">
+                                    <div class="avatar">
+                                        <img src="/static/img/1.jpg" alt="">
+                                        <span class="icon">
+                                            <i class="icon-play"></i>
+                                        </span>
+
+                                    </div>
+                                    <h3>写在远方 邱不苑作词</h3>
+                                    <p>
+                                        <span>小天Xiaotian</span>
+                                    </p>
+                                    <span class="rank">10</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ！mid -->
+        </div>
+        <!-- 尾部 -->
+        <div class="foot">
+            <span id="icp">
+
+            © 2019 music,北京达内科技AID1907山寨音乐组
+            </span>
+        </div>
+        <!-- layer -->
+    </div> 
+    <script type="text/javascript">
+        var cons = document.getElementsByClassName("con")
+        var bars = document.getElementsByClassName("bar")
+        $.ajax({
+            url:'http://127.0.0.1:8000/index/index_server',
+            type:'get',
+            dataType:'json',
+            success:function(data){
+                if (data.username){
+                    $('#login_box').html('<span class="dl"> <a href="/index/exit/">注销</a><a href="/personal">个人中心</a><a href="/personal">欢迎您 , '+data.username +'</a>   </span>')
+                }else{
+                    $('#login_box').html('<span class="dl"><a href="/user/login">登录/注册</a></span>')
+                }
+            }
+        })
+        cons[0].style.display = "block";
+
+        bars[0].onclick = function () {
+            hidcon();
+            this.setAttribute("class", "bar ff")
+            cons[0].style.display = "block";
+        }
+        bars[1].onclick = function () {
+            hidcon();
+            this.setAttribute("class", "bar ff")
+            cons[1].style.display = "block";
+        }
+        function hidcon() {
+            for (var i = 0; i < cons.length; i++) {
+                cons[i].style.display = "none"
+                bars[i].setAttribute("class", "bar");
+            }
+        }
+
+
+        var dons = document.getElementsByClassName("don")
+        var tars = document.getElementsByClassName("tar")
+
+        dons[0].style.display = "block";
+
+        tars[0].onclick = function () {
+            hidcons();
+            this.setAttribute("class", "tar fff")
+            dons[0].style.display = "block";
+        }
+        tars[1].onclick = function () {
+            hidcons();
+            this.setAttribute("class", "tar fff")
+            dons[1].style.display = "block";
+        }
+        tars[2].onclick = function () {
+            hidcons();
+            this.setAttribute("class", "tar fff")
+            dons[2].style.display = "block";
+        }
+        tars[3].onclick = function () {
+            hidcons();
+            this.setAttribute("class", "tar fff")
+            dons[3].style.display = "block";
+        }
+        tars[4].onclick = function () {
+            hidcons();
+            this.setAttribute("class", "tar fff")
+            dons[4].style.display = "block";
+        }
+        function hidcons() {
+            for (var i = 0; i < dons.length; i++) {
+                dons[i].style.display = "none"
+                tars[i].setAttribute("class", "tar");
+            }
+        }
+
+        var hots = document.getElementsByClassName("hot-song-ul")
+        var fars = document.getElementsByClassName("far")
+        
+        hots[0].style.display = "block";
+
+        fars[0].onclick = function () {
+            hidconse();
+            this.setAttribute("class", "far ffff")
+            hots[0].style.display="block";
+        }
+        fars[1].onclick = function () {
+            hidconse();
+            this.setAttribute("class", "far ffff")
+            hots[1].style.display="block";
+        }
+        fars[2].onclick = function () {
+            hidconse();
+            this.setAttribute("class", "far ffff")
+            hots[2].style.display="block";
+        }
+        fars[3].onclick = function () {
+            hidconse();
+            this.setAttribute("class", "far ffff")
+            hots[3].style.display="block";
+        }
+        fars[4].onclick = function () {
+            hidconse();
+            this.setAttribute("class", "far ffff")
+            hots[4].style.display="block";
+        }
+        fars[5].onclick = function () {
+            hidconse();
+            this.setAttribute("class", "far ffff")
+            hots[5].style.display="block";
+        }
+        function hidconse() {
+            for (var i = 0; i < hots.length; i++) {
+                hots[i].style.display = "none"
+                fars[i].setAttribute("class", "far");
+            }
+        }
+
+        $(document).ready(function () {
+
+            /* 设置第一张图片 */
+            $(".slider .bd li").first().before($(".slider .bd li").last());
+
+            /* 鼠标悬停箭头按钮显示 */
+            $(".slider").hover(function () {
+                $(this).find(".arrow").stop(true, true).fadeIn(300)
+            }, function () {
+                $(this).find(".arrow").fadeOut(300)
+            });
+
+            /* 滚动切换 */
+            $(".slider").slide({
+                titCell: ".hd ul",
+                mainCell: ".bd ul",
+                effect: "leftLoop",
+                autoPlay: true,
+                vis: 3,
+                autoPage: true,
+                trigger: "click"
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
