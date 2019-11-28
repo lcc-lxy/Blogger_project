@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微博授权</title>
+</head>
+<body>
+    <script src="/static/js/jquery.min.js"></script>
+    <script>
+        function getQueryString(v){
+            var query=window.location.search.substr(1);
+            var data = query.split('&');
+            for (var i =0;i<data.length;i++){
+                //state=123
+                var par=data[i].split('=')
+                if (par[0] == v){
+                    return par[1]
+                    }
+            }
+            return null
+        }
+        $(function(){
+            var code = getQueryString('code');
+            console.log(code)
+        })
+    </script>
+</body>
+</html>
